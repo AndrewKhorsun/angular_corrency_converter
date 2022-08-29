@@ -1,0 +1,53 @@
+<div class="converter-current">
+  <div class="converter-current__block">
+    <div class="p-1 border bg-light rounded">
+      <input 
+        type="number" 
+        value={{firstInput}} 
+        (input)="enteringFirstValue($event)" 
+        class="form-control p-3 " min="1"
+      >
+    </div>
+    <div class="p-1 border bg-light rounded">
+      <div class="form-floating">
+        <select 
+          class="form-select" 
+          id="floatingSelect" 
+          aria-label="Floating label select example"
+          (change)="selectingFirstCurrency($event)" 
+        >
+          <option>Оберіть валюту</option>
+          <option *ngFor="let el of exchange">{{el.txt}}</option>
+        </select>
+        <label for="floatingSelect">Обрана валюта</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="converter-current__block">
+    <div class="p-1 border bg-light rounded">
+      <input 
+        type="number" 
+        value={{secondInput}} 
+        (input)="enteringSecondValue($event)" 
+        class="form-control p-3 "
+        min="1"
+      >
+    </div>
+    <div class="p-1 border bg-light rounded">
+      <div class="form-floating">
+        <select 
+          class="form-select" 
+          id="floatingSelect" 
+          aria-label="Floating label select example"
+          (change)="selectingSecondCurrency($event)"
+        >
+          <option>Оберіть валюту</option>
+          <option *ngFor="let el of exchange">{{el.txt}}</option>
+        </select>
+        <label for="floatingSelect">Обрана валюта</label>
+      </div>
+    </div>
+  </div>
+</div>

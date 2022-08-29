@@ -1,0 +1,10 @@
+<div *ngIf="exchangeRatesFromServer.length === 0; else elseBlock" class="d-flex justify-content-center m-5">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <app-header [exchange]="exchangeRatesFromServer"></app-header>
+  <app-converter-current [exchange]="exchangeRatesFromServer"></app-converter-current>
+</ng-template>
